@@ -14,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::post('callback-gateway/one', [\App\Http\Controllers\PaymentController::class, 'gatewayOne'])
+    ->middleware('throttle:'.config('services.merchant_one.count_request').',1440');
+
+Route::post('callback-gateway/two', [\App\Http\Controllers\PaymentController::class, 'gatewayTwo'])
+    ->middleware('throttle:'.config('services.merchant_two.count_request').',1440');

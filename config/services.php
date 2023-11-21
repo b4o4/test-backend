@@ -31,4 +31,15 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    'merchant_one' => [
+        'id' => env('MERCHANT_ONE_ID'),
+        'key' => env('MERCHANT_ONE_KEY'),
+        'count_request' => env('MERCHANT_ONE_COUNT_REQUEST', 100)
+    ],
+    'merchant_two' => [
+        'id' => env('MERCHANT_TWO_ID'),
+        'key' => env('MERCHANT_TWO_KEY'),
+        'count_request' => env('MERCHANT_ONE_COUNT_REQUEST', 100)
+    ]
+
 ];
